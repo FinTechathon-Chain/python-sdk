@@ -2,6 +2,16 @@
 
 ![](./images/FISCO_BCOS_Logo.svg)
 
+## 踩坑
+
+1. 节点只能在Linux环境上部署
+2. 节点启动后将`nodes/127.0.0.1/sdk`目录下的所有文件复制到`python-sdk`中的`bin`目录下
+3. Windows文件到Linux文件换行符变化导致sh脚本无法执行
+4. 记得在`python-sdk`目录中执行`pip3 install -r requirements.txt`
+5. 不要用内置的solcjs，需要在GitHub上手动下载solc的binary，地址：[https://github.com/ethereum/solidity/releases/tag/v0.4.24](https://github.com/ethereum/solidity/releases/tag/v0.4.24)
+6. 需要在`python-sdk`目录中修改`client_config.py`中的以下部分：
+    * `account_keyfile`与`account_password`：需要提前执行`python3 ./console2.py newaccount`，然后`bin/accounts`目录下会出现对应的`.keystore`文件。
+    * `solc_path`：对应下载得到的solc binary
 
 [![Build Status](https://travis-ci.org/FISCO-BCOS/python-sdk.svg?branch=master)](https://travis-ci.org/FISCO-BCOS/python-sdk)
 [![CodeFactor](https://www.codefactor.io/repository/github/fisco-bcos/python-sdk/badge)](https://www.codefactor.io/repository/github/fisco-bcos/python-sdk)
