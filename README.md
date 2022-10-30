@@ -4,7 +4,7 @@
 
 ## 踩坑
 
-1. 节点只能在Linux环境上部署
+1. 节点只能在Linux环境上部署，[部署脚本](https://raw.githubusercontent.com/FISCO-BCOS/FISCO-BCOS/master-2.0/tools/build_chain.sh)
 2. 节点启动后将`nodes/127.0.0.1/sdk`目录下的所有文件复制到`python-sdk`中的`bin`目录下
 3. Windows文件到Linux文件换行符变化导致sh脚本无法执行
 4. 记得在`python-sdk`目录中执行`pip3 install -r requirements.txt`
